@@ -95,6 +95,9 @@ vendor/rails/. This directory is in the load path.
 <!-- float -->
 <!-- json -->
 
+# Project First Command
+rails new appName --database=postgresql (since heroku does not support sqlite)
+
 
 # Model generation
 rails g model ModelName attribute:datatype
