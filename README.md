@@ -104,6 +104,35 @@ rails g migration add_attribute_name_to_model attribute:datatype
 rails db:migrate # to generate the schema file
 
 
+<!-- MVC -->
+
+# root page ( dashboard of the post )
+# post
+  - new
+  - create
+  - edit
+  - updated
+  - destroy
+
+# Controller
+  - rails g controller Posts
+  - rails g controller Posts index new edit create update destroy
+    <!-- Restful -->
+    - index # Post.all to display all the record of any determine object (V) (GET)
+    - new # Post.new (V) (GET)
+    - create # Post.new (POST) (NV)
+    - edit # Post.find(id) (GET) (V)
+    - update # Post.find(id) && Post.update (NV) (PUT)
+    - destroy # Post.destroy (NV) (DELETE)
+
+
+rails routes
+  - Display all the route that the config/routes.rb has.
+
+<!-- posts_index  GET  /posts/index(.:format)                                   posts#index -->
+<!-- <a href="<%= posts_index_path %>" >Dashboard</a> -->
+
+
 # Post
   rails g model Post title content:text
   # has_many :comments
