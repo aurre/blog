@@ -85,3 +85,34 @@ _vendor_
 External libraries that the application depends on. Also includes the plugins
 subdirectory. If the app has frozen rails, those gems also go here, under
 vendor/rails/. This directory is in the load path.
+
+
+<!-- string (255 characters) -->
+<!-- text (unlimeted characters) -->
+<!-- int -->
+
+<!-- datetime -->
+<!-- float -->
+<!-- json -->
+
+
+# Model generation
+rails g model ModelName attribute:datatype
+
+rails g migration add_attribute_name_to_model attribute:datatype
+
+rails db:migrate # to generate the schema file
+
+
+# Post
+  rails g model Post title content:text
+  # has_many :comments
+  - title:string
+  - content:text
+
+
+# Comment
+  rails g model Comment post:references content:text
+  # belongs_to :post
+  - post_id:int
+  - content:text
