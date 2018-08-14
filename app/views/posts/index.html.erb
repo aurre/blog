@@ -1,0 +1,8 @@
+<h1><%= @title %></h1>
+
+<% @posts.each do |post| %>
+  <%#= post == to a Post object %>
+  Title: <%= post.title %>
+  Content: <%= post.content %>
+  <hr>
+<% end %>

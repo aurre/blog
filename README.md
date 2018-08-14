@@ -129,7 +129,7 @@ rails db:migrate # to generate the schema file
 rails routes
   - Display all the route that the config/routes.rb has.
 
-<!-- posts_index  GET  /posts/index(.:format)                                   posts#index -->
+<!-- posts_index  GET  /posts/index(.:format)            posts#index -->
 <!-- <a href="<%= posts_index_path %>" >Dashboard</a> -->
 
 
