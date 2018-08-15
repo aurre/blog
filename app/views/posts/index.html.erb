@@ -1,8 +1,22 @@
-<h1><%= @title %></h1>
+<h1 class="dash-title"><%= @title %></h1>
 
-<% @posts.each do |post| %>
-  <%#= post == to a Post object %>
-  Title: <%= post.title %>
-  Content: <%= post.content %>
-  <hr>
-<% end %>
+<div style="display: flex; flex-wrap: wrap;">
+  <% if @posts.length == 0 %>
+    <h1>Please, add a post to see it on your dashbaord.</h1>
+  <% else %>
+    <% @posts.each do |post| %>
+      <%#= post == to a Post object %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.content %></p>
+          <%= link_to "Delete", post_path(post) , class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+          <%= link_to "Edit", edit_post_path(post), class: "btn btn-warning"%>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+<%= link_to "New Post", new_post_path, class: 'btn btn-primary' %>
